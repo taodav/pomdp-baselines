@@ -15,6 +15,9 @@ if __name__ == "__main__":
     for i in trange(steps):
         next_obs, rew, done, info = env.step(env.action_space.sample())
         step += 1
+        if done:
+            obs = env.reset()
+
         # print(step, done, info)
 
     new_t = time()
